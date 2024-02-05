@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe | GameHub.io</title>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div id="welcome-screen">
+        <div><h2>Player 1, Enter Your Name: </h2><input type="text" id="player1" maxlength="12" required class="inputs"> <label for="player1">Player 1's Name</label></div>
+        <div><h2>Player 2, Enter Your Name: </h2><input type="text" id="player2" maxlength="12" required class="inputs"> <label for="player2">Player 2's Name</label></div>
+        <button id="lets-play" disabled>Let's Play!</button>
+        <p><span>Pro Tip:-</span> Player 1 goes first and his symbol is <span>X</span>. Player 2 goes second and his symbol is <span>O</span></p>
+    </div>
+    <div id="game">
+        <button id="quit">Quit</button>
+        <div id="1stPlayerInfo" class="playerInfo">
+            <div><img src="./assets/x-symbol-svgrepo-com.svg" alt="Player 1's Symbol"><h2 id="player1Info"></h2></div>
+            <div class="wins"><h3>Wins:</h3><i id="1wins">0</i></div>
+            <div class="losses"><h3>Losses:</h3><i id="1losses">0</i></div>
+            <div><h3>Ties:</h3><i id="1ties">0</i></div>
+        </div>
+        <div id="gameBoard" class="default">
+        </div>
+        <div id="2ndPlayerInfo" class="playerInfo">
+            <div><img src="./assets/circle-svgrepo-com.svg" alt="Player 1's Symbol"><h2 id="player2Info"></h2></div>
+            <div class="wins"><h3>Wins:</h3><i id="2wins">0</i></div>
+            <div class="losses"><h3>Losses:</h3><i id="2losses">0</i></div>
+            <div><h3>Ties:</h3><i id="2ties">0</i></div>
+        </div>
+        <button id="retry-button" class="none"></button>
+    </div>
+</body>
+</html>

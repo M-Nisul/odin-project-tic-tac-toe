@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+:root{
+    --text-color: #140009;
+    --bg-color: #ffedf6;
+    --primary-color: #f90b79;
+    --secondary-color: #7afcc3;
+    --accent-color: #4686fb;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#welcome-screen{
+    background-color: var(--primary-color);
+    width: 50rem;
+    height: 30rem;
+    inset: 0;
+    margin: auto;
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    text-align: center;
+    position: relative;
+}
+
+#welcome-screen div{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 3rem;
+    height: 5rem;
+    
+}
+
+#welcome-screen div h2{
+    margin-right: 1rem;
+}
+
+#welcome-screen div input{
+    border: none;
+    outline: none;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    height: 2rem;
+    position: relative;
+    padding: 0.5rem;
+}
+
+#welcome-screen div label{
+    position: absolute;
+    font-size: 0.7rem;
+    left: 27.5rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+#welcome-screen div input:focus ~ label,#welcome-screen div input:valid ~ label{
+    transform: translate(-1.6rem, -2.5rem);
+    opacity: 0.7;
+} 
+
+#welcome-screen button{
+    width: 7rem;
+    height: 3.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: var(--accent-color);
+    border-radius: 0.7rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#welcome-screen button:hover:not(#welcome-screen button:disabled){
+    transform: scale(1.2);
+}
+
+#welcome-screen button:disabled{
+    cursor: not-allowed;
+}
+
+#welcome-screen p{
+    position: absolute;
+    bottom: 4rem;
+    left: 3rem;
+}
+
+#welcome-screen p span{
+    position: relative;
+    background-color: unset;
+    inset: 0;
+    border-radius: 0;
+    box-shadow: unset;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+#game{
+    display: none;
+    align-items: center;
+    position: relative;
+}
+
+#game .playerInfo{
+    width: 10rem;
+    background-color: var(--secondary-color);
+    height: 13rem;
+    border-radius: 0.7rem;
+    margin: 0 7rem;
+    text-align: center;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+
+#game .playerInfo div{
+    display: flex;
+    width: 7rem;
+    justify-content: space-around;
+    padding-bottom: 1.25rem;
+}
+
+#game .playerInfo img{
+    width: 2rem;
+    height: 2rem;
+}
+
+#game #gameBoard{
+    width: 60%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(3,minmax(200px,1fr));
+    grid-template-rows: repeat(3,minmax(200px,1fr));
+    gap: 0.5rem;
+    background: var(--primary-color);
+    padding: 0.5rem;
+}
+
+#game #gameBoard .tile{
+    background-color: var(--secondary-color);
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-family: 'Poppins',sans-serif;
+    font-size:7rem;
+    color: var(--text-color);
+}
+
+.retry{
+    opacity: 0.4;
+}
+
+.none{
+    display: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+}
+
+.show{
+    display: block;
+    transition: all 0.5s;
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    background-image: url(./assets/rotate-arrow.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem;
+    cursor: pointer;
+}
+
+@keyframes retry {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.animate-button{
+    animation: retry 2s linear;
+}
+
+#quit{
+    outline: none;
+    border: none;
+    border-radius: 0.8rem;
+    background-color: var(--accent-color);
+    width: 9rem;
+    height: 3.5rem;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    bottom: 100%;
+    left: 45%;
+    right: 55%;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#quit:hover{
+    transform: scale(1.1);
+}
